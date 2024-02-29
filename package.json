@@ -23,5 +23,12 @@
     "ruru": "^2.0.0-beta.11",
     "validator": "^13.11.0",
     "ws": "^8.16.0"
-  }
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
