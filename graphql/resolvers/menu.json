@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Scrambled Eggs with Toast",
+    "description": "Two fluffy scrambled eggs served with your choice of toast (white, wheat, or sourdough)",
+    "price": 7.99,
+    "categories": ["Breakfast", "Eggs"],
+    "imageUrl": "https://example.com/images/scrambled_eggs_toast.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Pancakes with Fruit and Maple Syrup",
+    "description": "Three fluffy pancakes topped with fresh seasonal fruit and drizzled with maple syrup",
+    "price": 8.5,
+    "categories": ["Breakfast", "Pancakes"],
+    "imageUrl": "https://example.com/images/pancakes_fruit_syrup.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "French Toast with Berries and Whipped Cream",
+    "description": "Thick slices of French toast drizzled with maple syrup and topped with fresh berries and whipped cream",
+    "price": 9.25,
+    "categories": ["Breakfast", "French Toast"],
+    "imageUrl": "https://example.com/images/french_toast_berries_cream.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Breakfast Burrito",
+    "description": "Scrambled eggs, sausage, cheese, and salsa wrapped in a warm tortilla",
+    "price": 8.99,
+    "categories": ["Breakfast", "Burritos"],
+    "imageUrl": "https://example.com/images/breakfast_burrito.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Breakfast Sandwich",
+    "description": "Your choice of egg (scrambled, fried, or omelet), cheese, and bacon or sausage on a toasted bagel or English muffin",
+    "price": 7.5,
+    "categories": ["Breakfast", "Sandwiches"],
+    "imageUrl": "https://example.com/images/breakfast_sandwich.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Oatmeal with Fruit and Nuts",
+    "description": "Steel-cut oats topped with fresh fruit and nuts, served with a drizzle of honey or maple syrup",
+    "price": 6.99,
+    "categories": ["Breakfast", "Healthy"],
+    "imageUrl": "https://example.com/images/oatmeal_fruit_nuts.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Yogurt Parfait",
+    "description": "Layered yogurt with granola, fresh fruit, and honey",
+    "price": 5.99,
+    "categories": ["Breakfast", "Healthy"],
+    "imageUrl": "https://example.com/images/yogurt_parfait.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Avocado Toast",
+    "description": "Smashed avocado on toasted bread, topped with your choice of toppings (e.g., feta cheese, tomatoes, chili flakes)",
+    "price": 7.25,
+    "categories": ["Breakfast", "Vegetarian"],
+    "imageUrl": "https://example.com/images/avocado_toast.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Fruit Plate",
+    "description": "A selection of seasonal fresh fruits",
+    "price": 5.5,
+    "categories": ["Breakfast", "Healthy", "Vegan"],
+    "imageUrl": "https://example.com/images/fruit_plate.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Granola and Milk",
+    "description": "Crunchy granola served with your choice of milk (dairy or non-dairy)",
+    "price": 5.25,
+    "categories": ["Breakfast", "Healthy"],
+    "imageUrl": "https://example.com/images/granola_milk.jpg",
+    "isAvailable": true
+  },
+  {
+    "name": "Breakfast Quesadilla",
+    "description": "Scrambled eggs, cheese, and your choice of other fillings (bacon, sausage, vegetables) wrapped in a warm tortilla",
+    "price": 8.75,
+    "categories": ["Breakfast", "Mexican"],
+    "imageUrl": "https://example.com/images/breakfast_",
+    "isAvailable": true
+  }
+]
