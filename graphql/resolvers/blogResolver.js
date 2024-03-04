@@ -35,3 +35,12 @@ module.exports = {
   updateBlog,
   deleteBlog,
 };
+
+// const menuItems = require("./menu.json");
+// menuItems.forEach((menuItem) => {
+//   const newMenuItem = new Blog(menuItem);
+//   newMenuItem
+//     .save()
+//     .then(() => console.log("Menu item inserted:", menuItem.name))
+//     .catch((err) => console.error("Error inserting menu item:", err));
+// });

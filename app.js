@@ -13,6 +13,7 @@ const { ApolloServer, gql } = require("apollo-server-express");
 const server = new ApolloServer({
   typeDefs: gql(schema),
   resolvers: root,
+  cache: "bounded",
   context: async ({ req, res }) => {
     const user = await authMiddleware(req, res);
     return { req, res, user };
@@ -25,7 +26,7 @@ app.use(express.json());
 
 // cors roles
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_URL,
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -46,5 +47,4 @@ mongoose
 
 // to be done
 // user image + send email upon reqister to verify user
-// authintication and authorization ----- done
 // notifiacion for admin panal ----"Subscriptions in Apollo Server"

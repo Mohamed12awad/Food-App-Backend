@@ -23,3 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 Full Stack Final Project.pdf
+graphql/resolvers/menu.json
