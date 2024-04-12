@@ -5,8 +5,11 @@
  * It includes authentication checks for authorized access and leverages utility functions from `utils.js`.
  */
 
+// const { ApolloError } = require("apollo-server");
+const { UserInputError } = require("apollo-server");
 const User = require("../../models/userModel");
 const { createToken, isAuthorized } = require("../../utils/utils");
+const { GraphQLError } = require("graphql");
 
 const getAllUsers = async (_, __, { user }) => {
   isAuthorized(user, "admin");
@@ -29,26 +32,26 @@ const editUser = async (_, { userId, userInput }, { user }) => {
 };
 const createUser = async (
   _,
-  { email, password, firstName, lastName, phone, type },
-  { user }
+  { email, password, firstName, lastName, phone }
 ) => {
-  isAuthorized(user);
-
+  // isAuthorized(user);
   return await User.create({
     email,
     password,
     firstName,
     lastName,
     phone,
-    type,
   });
 };
 
 const login = async (_, { email, password }, { res }) => {
   try {
     const user = await User.login(email, password);
+
     if (!user) {
-      throw new Error("Invalid email or password");
+      throw new GraphQLError("Invalid credentials", {
+        extensions: { code: "UNAUTHENTICATED", http: { status: 401 } }, // Custom error code
+      });
     }
 
     const token = createToken(user._id, user.type);
@@ -65,8 +68,12 @@ const login = async (_, { email, password }, { res }) => {
     };
   } catch (err) {
     // Log error for debugging
+    if (err instanceof GraphQLError) {
+      throw err; // Re-throw the GraphQL error to be handled by GraphQL
+    }
+    // Log other errors for debugging
     console.error("Error during login:", err);
-    throw new Error("Error signing in");
+    throw new Error("Internal server error");
   }
 };
 

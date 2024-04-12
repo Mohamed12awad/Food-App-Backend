@@ -35,17 +35,19 @@ type Booking {
   _id: ID!
   user: User!
   table: Table!
-  dateTime: String!
+  date: String!
+  time: String!
   partySize: Int!
   specialRequests: String
   status: String!
 }
 
 type Blog {
-  id: ID!
+  _id: ID!
   title: String!
   content: String!
   author: User
+  createdAt: String
 }
 
 type contactMessage {
@@ -70,7 +72,7 @@ type Query {
 
 type Mutation {
   login(email: String!, password: String!): AuthPayload
-  createUser(email: String!, password: String!, firstName: String!, lastName: String!, phone: String, type: String): User
+  createUser(email: String!, password: String!, firstName: String!, lastName: String!, phone: String): User
   editUser(userId: ID!, userInput: UserInput!): User
   deleteUser(userId: ID!): User
 
@@ -86,7 +88,7 @@ type Mutation {
   editBooking(bookingId: ID!, bookingInput: BookingInput!): Booking
   deleteBooking(bookingId: ID!): Booking
 
-  sendMessage(contactMessage: ContactUsInput!): ContactUsResponse
+  sendMessage(ContactUsInput: ContactUsInput!): ContactUsResponse
 
   createBlog(title: String!, content: String!, author: String!): Blog!
   updateBlog(id: ID!, title: String!, content: String!, author: String!): Blog!
@@ -135,7 +137,6 @@ input ContactUsInput {
 }
 
 type ContactUsResponse {
-  success: Boolean!
   message: String
 }
 

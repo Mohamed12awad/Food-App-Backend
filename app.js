@@ -14,6 +14,17 @@ const server = new ApolloServer({
   typeDefs: gql(schema),
   resolvers: root,
   cache: "bounded",
+  // formatError: (error) => {
+  //   // Log errors for debugging
+  //   console.error(error);
+  //   // Remove sensitive information from error messages
+  //   return new GraphQLError("Unexpected error!", {
+  //     extensions: {
+  //       code:
+  //         error.extensions?.code || ApolloServerErrorCode.INTERNAL_SERVER_ERROR,
+  //     },
+  //   });
+  // },
   context: async ({ req, res }) => {
     const user = await authMiddleware(req, res);
     return { req, res, user };

@@ -7,7 +7,7 @@ const getAllBookings = async (_, __, { user }) => {
 };
 const getAllBookingsForUser = async (_, __, { user }) => {
   isAuthorized(user);
-  return await Booking.find({ _id: user.userId });
+  return await Booking.find({ user: user.userId });
 };
 
 const getBookingById = async (_, { bookId }, { user }) => {

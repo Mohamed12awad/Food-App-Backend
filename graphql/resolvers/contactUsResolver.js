@@ -7,7 +7,8 @@ const getAllContactMessage = async (_, __, { user }) => {
   return await ContactMessage.find();
 };
 
-const sendMessage = async (_, { name, email, message }) => {
+const sendMessage = async (_, { ContactUsInput }) => {
+  const { name, email, message } = ContactUsInput;
   return await ContactMessage.create({ name, email, message });
 };
 module.exports = { sendMessage, getAllContactMessage };
