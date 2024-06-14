@@ -20,6 +20,11 @@ const getUserById = async (_, { userId }, { user }) => {
 
   return await User.findById(userId);
 };
+const getCurrentUser = async (_, __, { user }) => {
+  isAuthorized(user);
+
+  return await User.findById(user.userId);
+};
 const deleteUser = async (_, { userId }, { user }) => {
   isAuthorized(user);
 
@@ -80,6 +85,7 @@ const login = async (_, { email, password }, { res }) => {
 module.exports = {
   getAllUsers,
   getUserById,
+  getCurrentUser,
   createUser,
   login,
   editUser,

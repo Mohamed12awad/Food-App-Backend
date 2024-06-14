@@ -1,6 +1,7 @@
 const {
   getUserById,
   getAllUsers,
+  getCurrentUser,
   createUser,
   login,
   editUser,
@@ -42,6 +43,7 @@ const resolvers = {
   Query: {
     getAllUsers,
     getUserById,
+    getCurrentUser,
     getAllTables,
     getAllMenuItems,
     getMenuItemById,

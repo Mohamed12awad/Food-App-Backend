@@ -59,6 +59,7 @@ type contactMessage {
 type Query {
   getAllUsers: [User!]! 
   getUserById(userId: ID!): User 
+  getCurrentUser: User 
   getAllTables: [Table]
   getMenuItemById: MenuItem
   getAllMenuItems(limit: Int, offset: Int,category:String): [MenuItem]
@@ -104,6 +105,7 @@ input UserInput {
   firstName: String
   lastName: String
   phone: String
+  email: String
 }
 
 input MenuItemInput {

@@ -3,11 +3,11 @@ const { isAuthorized } = require("../../utils/utils");
 
 const getAllBookings = async (_, __, { user }) => {
   isAuthorized(user, "admin");
-  return await Booking.find();
+  return await Booking.find().populate("user");
 };
 const getAllBookingsForUser = async (_, __, { user }) => {
   isAuthorized(user);
-  return await Booking.find({ user: user.userId });
+  return await Booking.find({ user: user.userId }).populate("user");
 };
 
 const getBookingById = async (_, { bookId }, { user }) => {
